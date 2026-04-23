@@ -37,7 +37,7 @@
 				<div class="col-md-4">
 					<div class="card h-100 shadow-sm border-0" style="background-color: #cfe2ff;">
 						<div class="card-body d-flex align-items-center justify-content-center py-5">
-							<a href="#" class="btn btn-link text-decoration-none fs-4 fw-bold text-primary">科目管理</a>
+							<a href="SubjectList.action" class="btn btn-link text-decoration-none fs-4 fw-bold text-primary">科目管理</a>
 						</div>
 					</div>
 				</div>
