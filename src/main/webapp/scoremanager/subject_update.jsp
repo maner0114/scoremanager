@@ -14,10 +14,10 @@
 	
 
 		
-		<form action="StudentUpdateExecute.action" method="post">
+		<form action="SubjectUpdateExecute.action" method="post">
 		    <div style="margin-bottom: 15px;">
-		        <label for="ent_year">科目コード</label>
-		        <input type="text" name="ent_year" id="ent_year" value="${cd}" readonly>
+		        <label for="cd">科目コード</label>
+		        <input type="text" name="cd" id="ent_year" value="${cd}" readonly>
 		    </div>
 
 			    <p style="color:red;">${error}</p>

@@ -21,7 +21,7 @@ public class SubjectUpdateAction extends Action {
 
 			request.setAttribute("cd", cd);
 
-			return "student_update.jsp";
+			return "subject_update.jsp";
 		}else {
 			session.setAttribute("error", "接続が切れました");
 			return "login.jsp";

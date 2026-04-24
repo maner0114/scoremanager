@@ -36,7 +36,7 @@ public class SubjectUpdateExecuteAction extends Action {
         if(subDao.update(s)) { return "subject_update_done.jsp";	}
         else {
         	request.setAttribute("error", "科目が存在していません");
-        	return "subject_update_error.jsp";
+        	return "subject_update.jsp";
         	}
         
 		
