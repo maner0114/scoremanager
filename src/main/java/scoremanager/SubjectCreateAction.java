@@ -16,6 +16,7 @@ public class SubjectCreateAction extends Action{
 		//teacherがnullでないときは新規登録
 		if (teacher != null) {
 		      return "subject_create.jsp";
+		      
 		    }else{
 		    	//nullのときはログイン画面にとぶ
 		        session.setAttribute("error", "接続が切れました");
