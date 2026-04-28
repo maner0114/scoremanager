@@ -69,8 +69,7 @@ public class SubjectDao extends DAO {
 
 	    return list;
 	}
-	
-	//追加のメソッド
+//追加のメソッド
 	public Boolean save(Subject subject)throws Exception {
 		
 		Connection con = getConnection();
