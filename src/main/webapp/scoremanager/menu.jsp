@@ -30,7 +30,6 @@
                                 <a href="TestRegist.action" class="btn btn-outline-primary bg-white border-0 py-2">成績登録</a>
                                 <a href="TestList.action" class="btn btn-outline-primary bg-white border-0 py-2">成績参照</a>
 
-
                                 
                                 <a href="TestDelete.action" class="btn btn-outline-danger bg-white border-0 py-2">成績削除</a>
                             </div>
