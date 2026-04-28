@@ -13,7 +13,6 @@
 	<c:param name="content">
 		<p>登録が完了しました</p>
 		
-	
 		<a href="subject_create.jsp">戻る</a>
 		
 		<!-- 後で追加　科目一覧のURL -->

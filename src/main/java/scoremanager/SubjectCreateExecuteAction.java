@@ -45,6 +45,7 @@ public class SubjectCreateExecuteAction extends Action{
 			return "subject_create.jsp";
 		}
 		
+		
 		//登録処理
 		Subject su = new Subject();
 		su.setCd(cd);

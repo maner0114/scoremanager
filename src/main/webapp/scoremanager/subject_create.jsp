@@ -38,13 +38,16 @@
 			<label for="textbox-1-id" >科目コード</label>
 				<input type="text" id="textbox-1-id" name="cd" class="textbox-1" placeholder="科目コードを入力してください" required>
 		</div>
+		
 		<div class="form-gruop">
 			<label for="textbox-1-id">科目名　</label>
 				<input type="text" id="textbox-1-id" name="name" class="textbox-1" placeholder="科目名を入力してください" required>
 		</div>
+		
 		<div>
 			<button type="submit" name="end">登録</button>
 		</div>
+		
 		<div>
 			<a href="subject-list.jsp">戻る</a> <!-- 科目一覧に戻る　後で追加 -->
 		</div>
