@@ -15,7 +15,7 @@
 			<p>ログアウトしました</p>
 		</div>
 		
-		<p><a href="login.jsp">ログイン</a>
+		<p><a href="Login.action">ログイン</a>
 		
 	</c:param>
 </c:import>

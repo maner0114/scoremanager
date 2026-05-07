@@ -3,6 +3,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,5 +68,33 @@ public class SubjectDao extends DAO {
 	    }
 
 	    return list;
+	}
+//追加のメソッド
+	public Boolean save(Subject subject)throws Exception {
+		
+		Connection con = getConnection();
+		PreparedStatement st = null;
+		
+		int count = 0;
+		try {
+			
+			//SQL
+			st = con.prepareStatement("insert into subject(school_cd, cd, name) values(?,?,?)");
+			st.setString(1, subject.getSchool().getCd());
+			st.setString(2, subject.getCd());
+			st.setString(3, subject.getName());
+			
+			count = st.executeUpdate();
+			}catch(SQLException e) {
+				e.printStackTrace();
+				throw e;
+			}finally {
+				if(st != null) {
+					st.close();
+				}if(con !=null) {
+					con.close();
+				}
+		}
+		return count >0;
 	}
 }
