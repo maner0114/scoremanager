@@ -1,6 +1,8 @@
 package dao;
 
-
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +14,7 @@ import bean.Test;
 
 public class TestDao extends DAO {
 
-    //成績検索
+    // 成績検索
     public List<Test> filter(int entYear, String classNum, Subject subject, int count, School school) throws Exception {
 
         List<Test> list = new ArrayList<>();
@@ -44,7 +46,6 @@ public class TestDao extends DAO {
 
             while (rs.next()) {
 
-                //student
                 Student stu = new Student();
                 stu.setNo(rs.getString("student_no"));
                 stu.setName(rs.getString("student_name"));
@@ -52,13 +53,11 @@ public class TestDao extends DAO {
                 stu.setClassNum(classNum);
                 stu.setSchool(school);
 
-                //subject
                 Subject sub = new Subject();
                 sub.setCd(subject.getCd());
                 sub.setName(rs.getString("subject_name"));
                 sub.setSchool(school);
 
-                //test
                 Test t = new Test();
                 t.setStudent(stu);
                 t.setSubject(sub);
@@ -82,7 +81,7 @@ public class TestDao extends DAO {
         return list;
     }
 
-    //成績登録
+    // 成績登録
     public void save(Test t) throws Exception {
 
         Connection connection = getConnection();
@@ -163,7 +162,7 @@ public class TestDao extends DAO {
         return list;
     }
 
-    //成績削除
+    // 成績削除
     public void delete(String studentNo, String subjectCd, String schoolCd, int count) throws Exception {
 
         Connection connection = getConnection();
@@ -190,5 +189,4 @@ public class TestDao extends DAO {
             }
         }
     }
->>>>>>> branch 'master' of https://github.com/maner0114/scoremanager.git
 }
