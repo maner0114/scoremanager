@@ -1,6 +1,9 @@
 package dao;
 
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +12,7 @@ import bean.School;
 import bean.Student;
 import bean.Subject;
 import bean.Test;
+
 
 public class TestDao extends DAO {
 
@@ -190,5 +194,5 @@ public class TestDao extends DAO {
             }
         }
     }
->>>>>>> branch 'master' of https://github.com/maner0114/scoremanager.git
 }
+
