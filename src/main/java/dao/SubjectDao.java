@@ -97,4 +97,43 @@ public class SubjectDao extends DAO {
 		}
 		return count >0;
 	}
+	
+	//科目の変更
+	public boolean update(Subject subject) throws Exception {
+	    // 接続
+	    Connection con = null;
+	    PreparedStatement st = null;
+	    int count = 0;
+
+	    try {
+	        con = getConnection();
+	        // SQLをデータに格納
+	        st = con.prepareStatement(
+	            "UPDATE subject SET name = ? WHERE cd = ? and school_cd = ?"
+	        );
+
+	        // プレースホルダ（?）に値をセット
+	        st.setString(1, subject.getName());
+	        st.setString(2, subject.getCd());
+	        st.setString(3, subject.getSchool().getCd());
+
+	        // 実行
+	        count = st.executeUpdate();
+
+	    }  catch (SQLException e) {
+	        e.printStackTrace();
+	        return false;
+	    } finally {
+	        // 接続を切る
+	        if (st != null) {
+	            st.close();
+	        }
+	        if (con != null) {
+	            con.close();
+	        }
+	    }
+	    
+	    // 1行以上更新されていれば成功(true)、そうでなければ失敗(false)
+	    return count > 0;
+	}
 }
