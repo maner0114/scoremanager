@@ -28,7 +28,7 @@
 							<h5 class="card-title fw-bold mb-3">成績管理</h5>
 							<div class="d-grid gap-2">
 								<a href="TestRegist.action" class="btn btn-outline-primary bg-white border-0 py-2">成績登録</a>
-								<a href="TestList.action" class="btn btn-outline-primary bg-white border-0 py-2">成績参照</a>
+								<a href="TestScores.action" class="btn btn-outline-primary bg-white border-0 py-2">成績参照</a>
 							</div>
 						</div>
 					</div>

@@ -68,4 +68,35 @@ public class SubjectDao extends DAO {
 
 	    return list;
 	}
+	// 科目コードを指定して削除
+		public boolean delete(String cd, String schoolCd) throws Exception {
+
+		    boolean result = false;
+
+		    try (Connection con = getConnection();
+		         PreparedStatement st = con.prepareStatement(
+		             "DELETE FROM subject WHERE cd = ? AND school_cd = ?")) {
+
+		        
+		        if (cd == null || schoolCd == null) {
+		            throw new Exception("削除条件が不正");
+		        }
+
+		        System.out.println("cd=" + cd);
+		        System.out.println("schoolCd=" + schoolCd);
+
+		        st.setString(1, cd);
+		        st.setString(2, schoolCd);
+
+		        int count = st.executeUpdate();
+
+		        System.out.println("削除件数=" + count);
+
+		        if (count > 0) {
+		            result = true;
+		        }
+		    }
+
+		    return result;
+		}
 }
