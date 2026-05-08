@@ -7,70 +7,73 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import bean.Student;
 import bean.TestListStudent;
 
+public class TestListStudentDao extends DAO {
+	
+	private String baseSql = "select * from test";
+	
+	private List<TestListStudent> postFilter(ResultSet rSet) {
+        // リストを初期化
+        List<TestListStudent> list = new ArrayList<>();
+        
+        try {
+            // リザルトセットを全件走査
+            while (rSet.next()) {
+                // インスタンス化
+                TestListStudent testListStudent = new TestListStudent();
+
+                testListStudent.setSubjectName(rSet.getString("subject_cd"));
+                testListStudent.setSubjectCd(rSet.getString("SCHOOL_CD"));
+                testListStudent.setNum(rSet.getInt("no"));
+                testListStudent.setPoint(rSet.getInt("point"));
+                
+                // リストに追加
+                list.add(testListStudent);
+            }
+        } catch (SQLException | NullPointerException e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
+	
+	public List<TestListStudent> filter(String no)throws Exception {
+	    // リストを初期化
+	    List<TestListStudent> list = new ArrayList<>();
+	    // コネクションを確立
+	    Connection connection = getConnection();
+	    // プリペアードステートメント
+	    PreparedStatement statement = null;
+	    // リザルトセット
+	    ResultSet rSet = null;
+	    // SQL文の条件
+	    String condition = " where student_no = ?";
 
 
-public class TestListStudentDao extends DAO{
-	
-	private String baseSql = "select * from test where school_cd = ?";
-	
-	public List<TestListStudent> postFilter(ResultSet rSet)throws Exception{
-		//リストのインスタンス化
-		List<TestListStudent> list = new ArrayList<>();
-		
-		try {
-			while(rSet.next()) {
-				TestListStudent testliststudent = new TestListStudent();
-				
-				testliststudent.setSubjectName(rSet.getString("student_no"));
-				testliststudent.setSubjectCd(rSet.getString("subject_cd"));
-				testliststudent.setNum(rSet.getInt("no"));
-				testliststudent.setPoint(rSet.getInt("point"));
-				
-				list.add(testliststudent);
-			}
-			
-			}catch(SQLException | NullPointerException e) {
-				e.printStackTrace();
-			}
-			return list;
-			
-		}
-	
-	public List<TestListStudent> filter(Student student)throws Exception{
-		//リストの初期化
-		List<TestListStudent> list = new ArrayList<>();
-		
-		//データベースの接続
-		Connection connection = getConnection();
-		
-		PreparedStatement st= null;
-		ResultSet rs = null;
-		
-		String sql = "select student_no,subject_cd,no,point,class_num from test where student_no = ?";
-		String order = "order by subject_cd, no";
-		
-		try {
-			st = connection.prepareStatement(sql + order);
-			st.setString(1, student.getNo());
-			
-			rs = st.executeQuery();
-			
-			list = postFilter(rs);
-			
-		}catch(Exception e) {
-			throw e;
-		}finally {
-			if(st != null) {
-				try {
-					st.close();
-				}catch(SQLException sqle) {
-					throw sqle;
-				}
-			}
-			if (connection != null) {
+	    try {
+	        // SQL文をセット
+	        statement = connection.prepareStatement(baseSql + condition);
+	        statement.setString(1, no);
+	        
+	        // プライベートステートメントを実行
+	        rSet = statement.executeQuery();
+	        
+	        // リストへの格納処理を実行
+	        list = postFilter(rSet);
+	    } catch (Exception e) {
+	        throw e;
+	    } finally {
+	        // プリペアードステートメントを閉じる
+	        if (statement != null) {
+	            try {
+	                statement.close();
+	            } catch (SQLException sqle) {
+	                throw sqle;
+	            }
+	        }
+	        // コネクションを閉じる
+	        if (connection != null) {
 	            try {
 	                connection.close();
 	            } catch (SQLException sqle) {
@@ -80,5 +83,5 @@ public class TestListStudentDao extends DAO{
 	    }
 
 	    return list;
-		}
+	}
 }
