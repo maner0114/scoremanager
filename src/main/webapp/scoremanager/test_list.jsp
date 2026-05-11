@@ -13,7 +13,7 @@
 	<c:param name="content">
 		<section class="me-4">
 
-			<form method="get" id="filter-subject" action="TestListSubjet.action">
+			<form method="get" id="filter-subject" action="TestListSubject.action">
 				<div class="row border mx-3 mb-3 py-3 align-items-center rounded shadow-sm bg-light">
 					<div class="col-md-2">
 						科目情報
