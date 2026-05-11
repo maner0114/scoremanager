@@ -6,6 +6,7 @@
 	<p><a href="StudentList.action">学生管理</a></p>
 	<label>成績管理
 		<p><a href="TestRegist.action"> 成績登録</a></p>
+		<p><a href="TestDelete.action"> 成績削除</a></p>
 		<p><a href="TestList.action"> 成績参照</a></p>
 	</label>
 	<p><a href="SubjectList.action">科目管理</a></p>

@@ -20,8 +20,13 @@ public class SubjectListAction extends Action {
     	Teacher teacher = (Teacher) session.getAttribute("teacher");
 
     	if (teacher == null) {
+
     	    return "login.jsp";
+
     	}
+    	
+    	
+    	
 
     	SubjectDao sDAO = new SubjectDao();
     	List<Subject> sList = sDAO.filter(teacher.getSchool());

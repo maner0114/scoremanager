@@ -8,25 +8,23 @@ import jakarta.servlet.http.HttpSession;
 import tool.Action;
 public class SubjectDeleteDoneAction extends Action {
 
-public String execute(HttpServletRequest request,
-            HttpServletResponse response) throws Exception {
+	
+    public String execute(HttpServletRequest request,
+                          HttpServletResponse response) throws Exception {
 
-HttpSession session = request.getSession();
+    	HttpSession session =request.getSession();
+    	
+    	Teacher teacher = (Teacher) session.getAttribute("teacher");
+    	
+        String cd = request.getParameter("cd");
 
-Teacher teacher = (Teacher) session.getAttribute("teacher");
+        SubjectDao dao = new SubjectDao();
 
-if (teacher == null) {
-return "login.jsp";
-}
+        
+        dao.delete(cd, teacher.getSchool().getCd());  // 
 
-String cd = request.getParameter("cd");
+        request.setAttribute("done", true);
 
-SubjectDao dao = new SubjectDao();
-
-dao.delete(cd, teacher.getSchool().getCd());
-
-request.setAttribute("done", true);
-
-return "subject_delete.jsp";
-}
+        return "subject_delete.jsp";
+    }
 }
