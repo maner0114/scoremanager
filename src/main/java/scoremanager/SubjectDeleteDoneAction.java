@@ -8,7 +8,10 @@ import jakarta.servlet.http.HttpSession;
 import tool.Action;
 public class SubjectDeleteDoneAction extends Action {
 
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 8382051be1a7a7a6fec17c5acd827fcd100dfcaf
     public String execute(HttpServletRequest request,
                           HttpServletResponse response) throws Exception {
 

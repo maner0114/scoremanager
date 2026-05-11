@@ -16,6 +16,7 @@
             <div class="row g-4 justify-content-start">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 				<div class="col-md-4">
 					<div class="card h-100 shadow-sm border-0" style="background-color: #d1e7dd;">
 						<div class="card-body py-4 text-center">
@@ -28,6 +29,8 @@
 					</div>
 				</div>
 =======
+=======
+>>>>>>> 8382051be1a7a7a6fec17c5acd827fcd100dfcaf
                 <!-- 学生管理 -->
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm border-0" style="background-color: #f8d7da;">
@@ -39,7 +42,10 @@
                         </div>
                     </div>
                 </div>
+<<<<<<< HEAD
 >>>>>>> branch 'master' of https://github.com/maner0114/scoremanager.git
+=======
+>>>>>>> 8382051be1a7a7a6fec17c5acd827fcd100dfcaf
 
                 <!-- 成績管理 -->
                 <div class="col-md-4">

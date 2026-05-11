@@ -18,11 +18,17 @@ public class SubjectListAction extends Action {
 
     	HttpSession session = request.getSession();
     	Teacher teacher = (Teacher) session.getAttribute("teacher");
+<<<<<<< HEAD
 
     	if (teacher == null) {
 
     	    return "login.jsp";
 
+=======
+
+    	if (teacher == null) {
+    	    return "login.jsp"; // ログインしてない時
+>>>>>>> 8382051be1a7a7a6fec17c5acd827fcd100dfcaf
     	}
     	
     	
@@ -30,6 +36,11 @@ public class SubjectListAction extends Action {
 
     	SubjectDao sDAO = new SubjectDao();
     	List<Subject> sList = sDAO.filter(teacher.getSchool());
+<<<<<<< HEAD
+=======
+
+        request.setAttribute("sList", sList);
+>>>>>>> 8382051be1a7a7a6fec17c5acd827fcd100dfcaf
 
     	request.setAttribute("sList", sList);
         return "subject-list.jsp";
