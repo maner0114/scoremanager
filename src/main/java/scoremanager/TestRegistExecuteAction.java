@@ -26,15 +26,13 @@ public class TestRegistExecuteAction extends Action {
 
         School school = teacher.getSchool();
 
-
         String[] registNos = request.getParameterValues("regist"); // 学生番号一覧
         String subjectCd = request.getParameter("subject");        // 科目コード
         int count = Integer.parseInt(request.getParameter("count")); // 回数
-        String classNum = request.getParameter("classNum");        //クラス番号
+        String classNum = request.getParameter("classNum");        // クラス番号
 
         TestDao dao = new TestDao();
 
-      
         for (String studentNo : registNos) {
 
             // 入力欄 name="point_学生番号"
@@ -47,16 +45,15 @@ public class TestRegistExecuteAction extends Action {
 
             int point = Integer.parseInt(pointStr);
 
-            // 0〜100 の範囲チェック
+            // 0〜100 の範囲チェック（範囲外は保存しない）
             if (point < 0 || point > 100) {
                 continue;
             }
 
-
             Student stu = new Student();
             stu.setNo(studentNo);
             stu.setSchool(school);
-            stu.setClassNum(classNum); 
+            stu.setClassNum(classNum);
 
             Subject sub = new Subject();
             sub.setCd(subjectCd);
@@ -66,11 +63,11 @@ public class TestRegistExecuteAction extends Action {
             test.setStudent(stu);
             test.setSubject(sub);
             test.setSchool(school);
-            test.setClassNum(classNum); 
+            test.setClassNum(classNum);
             test.setNo(count);
             test.setPoint(point);
 
-            //保存
+            // 保存
             dao.save(test);
         }
 

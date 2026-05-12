@@ -9,7 +9,7 @@ public class Test implements Serializable {
     private Subject subject;   // 科目情報
     private School school;     // 学校情報
     private int no;            // 回数
-    private Integer point;     // 得点（NULL許容）
+    private Integer point;     // 得点
 
     // ===== Getter =====
     public Student getStudent() {

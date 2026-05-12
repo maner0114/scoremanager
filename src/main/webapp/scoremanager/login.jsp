@@ -17,10 +17,10 @@
 		</c:if>
 	
 		<form action="LoginExecute.action" method="post">
-			<input type="text" name="id" value="${id}" maxlength="10"
+			<input type="text" name="id" value="${id}" maxlength="10" pattern="^[a-zA-Z0-9]+$"
 			placeholder="半角でご入力ください" required>
 			
-			<input type="password" id="password" name="password" maxlength="30"
+			<input type="password" id="password" name="password" maxlength="30" pattern="^[a-zA-Z0-9]+$"
 			       placeholder="30文字以内の半角英数字でご入力ください" required>
 			
 			<label>

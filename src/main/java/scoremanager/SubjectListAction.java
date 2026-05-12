@@ -2,8 +2,8 @@ package scoremanager;
 
 import java.util.List;
 
+import bean.School;
 import bean.Subject;
-import bean.Teacher;
 import dao.SubjectDao;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -17,17 +17,16 @@ public class SubjectListAction extends Action {
     ) throws Exception {
 
     	HttpSession session = request.getSession();
-    	Teacher teacher = (Teacher) session.getAttribute("teacher");
+    	School school = (School) session.getAttribute("school");
 
-    	if (teacher == null) {
-    	    return "login.jsp"; // ログインしてない時
+    	// 仮対応（テスト用）
+    	if (school == null) {
+    	    school = new School();
+    	    school.setCd("tes");
     	}
-    	
-    	
-    	
 
     	SubjectDao sDAO = new SubjectDao();
-    	List<Subject> sList = sDAO.filter(teacher.getSchool());
+    	List<Subject> sList = sDAO.filter(school);
 
         request.setAttribute("sList", sList);
 
