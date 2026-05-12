@@ -10,6 +10,8 @@
     <c:param name="subtitle">
         メニュー
     </c:param>
+    
+    <c:param name="content">
                 <!-- 学生管理 -->
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm border-0" style="background-color: #f8d7da;">
