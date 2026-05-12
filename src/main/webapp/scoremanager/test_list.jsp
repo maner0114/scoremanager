@@ -42,12 +42,12 @@
 						<label class="form-label fw-bold">科目</label>
 						<select class="form-select" name="f3">
 							<option value="0">---------</option>
-							<c:forEach var="num" items="${subject_num_set}">
-								<option value="${num}">${num}</option>
-							</c:forEach>
-						</select>
-					</div>
-					
+						<c:forEach var="subject" items="${subject_num_set}">
+							<option value="${subject.cd}">${subject.name}</option>
+						</c:forEach>
+					</select>
+				</div>
+				
 					<div class="col-md-2 text-center pt-4">
 						<button class="btn btn-secondary w-100">検索</button>
 					</div>
