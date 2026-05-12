@@ -16,7 +16,7 @@
 		    <p style="color:red;">${error.value}</p>
 		</c:forEach>
 		
-		<form action="StudentUpdateExecute.action" method="post">
+		<form action="StudentCreateExecute.action" method="post">
 		    <div style="margin-bottom: 15px;">
 		        <label for="ent_year">入学年度</label>
 		        <select name="ent_year" id="ent_year">
