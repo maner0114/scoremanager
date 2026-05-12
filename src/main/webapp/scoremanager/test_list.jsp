@@ -13,7 +13,7 @@
 	<c:param name="content">
 		<section class="me-4">
 
-			<form method="get" id="filter-subject" action="TestListSubjet.action">
+			<form method="get" id="filter-subject" action="TestListSubject.action">
 				<div class="row border mx-3 mb-3 py-3 align-items-center rounded shadow-sm bg-light">
 					<div class="col-md-2">
 						科目情報
@@ -42,12 +42,12 @@
 						<label class="form-label fw-bold">科目</label>
 						<select class="form-select" name="f3">
 							<option value="0">---------</option>
-							<c:forEach var="num" items="${subject_num_set}">
-								<option value="${num}">${num}</option>
-							</c:forEach>
-						</select>
-					</div>
-					
+						<c:forEach var="subject" items="${subject_num_set}">
+							<option value="${subject.cd}">${subject.name}</option>
+						</c:forEach>
+					</select>
+				</div>
+				
 					<div class="col-md-2 text-center pt-4">
 						<button class="btn btn-secondary w-100">検索</button>
 					</div>

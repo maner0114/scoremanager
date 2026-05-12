@@ -7,7 +7,7 @@
     </c:param>
     
     <c:param name="subtitle">
-        成績登録
+        成績管理
     </c:param>
     
     <c:param name="content">

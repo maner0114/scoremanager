@@ -60,8 +60,6 @@ public class TeacherDao extends DAO {
 		st.setString(2, password);
 		ResultSet rs=st.executeQuery();
 	        
-	        rs = st.executeQuery();
-	        
 	        if (rs.next()) {
 		        teacher.setId(rs.getString("id"));
 		        teacher.setPassword(rs.getString("password"));
