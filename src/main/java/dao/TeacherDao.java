@@ -59,7 +59,7 @@ public class TeacherDao extends DAO {
 		st.setString(1,id);
 		st.setString(2, password);
 		ResultSet rs=st.executeQuery();
-
+	        
 	        rs = st.executeQuery();
 	        
 	        if (rs.next()) {

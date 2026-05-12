@@ -115,11 +115,5 @@ public class ClassNumDao extends DAO {
 
 	}
 
-	public boolean save(ClassNum classNum) throws Exception {
 
-	}
-
-	public boolean save(ClassNum classNum, String newClassNum) throws Exception {
-
-	}
 }

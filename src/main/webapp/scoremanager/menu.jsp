@@ -15,6 +15,21 @@
         <section class="mt-4">
             <div class="row g-4 justify-content-start">
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+				<div class="col-md-4">
+					<div class="card h-100 shadow-sm border-0" style="background-color: #d1e7dd;">
+						<div class="card-body py-4 text-center">
+							<h5 class="card-title fw-bold mb-3">成績管理</h5>
+							<div class="d-grid gap-2">
+								<a href="TestRegist.action" class="btn btn-outline-primary bg-white border-0 py-2">成績登録</a>
+								<a href="TestScores.action" class="btn btn-outline-primary bg-white border-0 py-2">成績参照</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
                 <!-- 学生管理 -->
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm border-0" style="background-color: #f8d7da;">
@@ -26,6 +41,7 @@
                         </div>
                     </div>
                 </div>
+
 
                 <!-- 成績管理 -->
                 <div class="col-md-4">
