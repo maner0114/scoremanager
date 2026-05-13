@@ -8,14 +8,14 @@
     </c:param>
 
     <c:param name="subtitle">
-        成績登録完了
+        成績管理
     </c:param>
 
     <c:param name="content">
         <section class="me-4">
 
             <div class="alert alert-success mt-4 mx-3" role="alert">
-                成績の登録が完了しました。
+                登録が完了しました。
             </div>
 
             <div class="mx-3 mt-3 d-flex gap-3">
